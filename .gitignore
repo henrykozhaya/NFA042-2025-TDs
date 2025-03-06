@@ -1,1 +1,7 @@
+# Ignore macOS system files
+.DS_Store
+
+# Ignore .gitignore itself if unintended
+.gitignore
+
 Test/
