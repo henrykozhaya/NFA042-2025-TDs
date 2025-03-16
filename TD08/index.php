@@ -22,6 +22,6 @@ function afficher_variable_globale($key){
     }
 }
 
-creer_variable_globale('charbel', 'cnam');
-modifier_variable_globale('charbel', 'cnam');
-afficher_variable_globale('charbel');
+creer_variable_globale('University', 'Cnam');
+modifier_variable_globale('University', 'cnam');
+afficher_variable_globale('University');

@@ -1,14 +1,28 @@
-## Question 1:
-Créez un fichier texte `data.txt` contenant des données au format CSV (Comma-Separated Values). Par exemple :
-```
-nom,prenom,age
-Dupont,Jean,30
-Durand,Marie,25
+## Question 1
+Créez une fonction PHP qui prend en paramètre un tableau associatif et le sauvegarde dans un fichier CSV nommé comme suit : `{year}-{month}-{day}-data.csv`.
+
+Exemple de données :
+```php
+$data = [
+    [
+        "nom" => "Dupont",
+        "prenom" => "Jean",
+        "age" => 30
+    ],
+    [
+        "nom" => "Durand",
+        "prenom" => "Marie",
+        "age" => 25
+    ]
+];
 ```
 ## Question 2:
-Modifiez le script PHP pour stocker les données lues dans un tableau associatif. Chaque ligne du fichier sera un élément du tableau.
-Affichez le contenu du tableau associatif sous forme de tableau HTML sur la page web.
-## Question 3:
-Ajoutez une fonction `ajouter_personne()` permettant d'ajouter de nouvelles données au fichier (nom,prenom,age).
+Créez une fonction PHP qui lit un fichier CSV et le sauvegarde au format JSON.
 
-Assurez-vous que les nouvelles données sont ajoutées à la fin du fichier `data.txt` et reflétées dans le tableau affiché sur la page.
+Le nouveau fichier doit avoir le même nom, mais avec une extension .json.
+
+## Question 3:
+Ajoutez une fonction `ajouter_personne_csv($nom, $prenom, $age, $fichier)` permettant d'ajouter de nouvelles données au fichier CSV existant.
+
+## Question 4:
+Ajouter une fonction `ajouter_personne_json($nom, $prenom, $age, $fichier)` permettant d'ajouter de nouvelles données au fichier JSON existant.
