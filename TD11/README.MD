@@ -3,7 +3,8 @@ Créez une fonction PHP qui prend en paramètre un tableau associatif et le sauv
 
 Exemple de données :
 ```php
-$data = [
+$data = 
+[
     [
         "nom" => "Dupont",
         "prenom" => "Jean",

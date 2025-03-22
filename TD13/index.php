@@ -1,13 +1,12 @@
-# Soumission de formulaire
-Soit le code HTML suivant :
-```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soumission de formulaire</title>
 </head>
+
 <body>
     <h3>Connexion</h3>
     <form action="save_form.php" method="post">
@@ -65,25 +64,5 @@ Soit le code HTML suivant :
         <input type="submit" value="Soumettre">
     </form>
 </body>
+
 </html>
-```
-
-Écrivez le script PHP de la page save_form.php permettant de sauvegarder les données soumises dans un fichier au format JSON. Ce fichier doit inclure la date actuelle de soumission au format AAAA-MM-JJ HH:MM:SS.
-
-Le nom du fichier JSON doit suivre le format suivant :
-{année}-{mois}-{jour}-{nom}-{poste}.json
-
-Règles de validation :
-* Nom : doit contenir au moins 2 caractères.
-* Email : doit être une adresse email valide.
-* Mot de passe : doit avoir au moins 8 caractères, incluant :
-    * Une lettre majuscule,
-    * Une lettre minuscule,
-    * Un chiffre,
-    * Un caractère spécial.
-* Date de naissance : ne peut pas être supérieure à la date actuelle.
-* Genre : un genre doit être sélectionné ('m' ou 'f').
-* Nationalité : au moins une nationalité doit être cochée.
-* Message : doit contenir au moins 10 caractères.
-* Poste : un poste doit être sélectionné.
-* Compétences : au moins une compétence doit être choisie.
