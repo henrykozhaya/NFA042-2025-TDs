@@ -9,7 +9,7 @@
 
 <body>
     <h3>Connexion</h3>
-    <form action="save_form.php" method="post">
+    <form action="save_form.php" method="post" enctype='multipart/form-data' >
         <label for="name">Nom</label>
         <input type="text" name="name" id="name">
         <br><br>
@@ -59,6 +59,10 @@
             <option value="excel">Excel</option>
             <option value="programming">Programmation</option>
         </select>
+        <br><br>
+
+        <label for="cv">Télécharger votre CV</label>
+        <input type='file' name="cv" id="cv" accept='application/pdf' />
         <br><br>
 
         <input type="submit" value="Soumettre">

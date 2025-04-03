@@ -2,6 +2,15 @@
 
 Ce répertoire Git contiendra les traveaux dirigés (TD) sur lesquels nous allons travailler.
 
+# Fonctions Utiles
+[functions.php](functions.php):
+* `getMySQLiConnection()` - Renvoie une connexion MySQLi pour interagir avec la base de données.
+* `getPDOConnection()` - Renvoie une connexion PDO, offrant une interface flexible pour accéder à une base de données.
+* `isValidPassword()` - Vérifie si un mot de passe satisfait les critères de sécurité définis.
+* `generateArrayOfIntegers()` - Génère un tableau d’entiers compris entre des limites données.
+* `getAge()` - Calcule l’âge à partir d’une date de naissance fournie.
+
+
 # List of TDs
 * [TD01](TD01/README.md): verifierAge() 
     * `gettype()`: Retourne le type de la variable passée en paramètre (ex. "integer", "string").
@@ -44,16 +53,37 @@ Ce répertoire Git contiendra les traveaux dirigés (TD) sur lesquels nous allon
     * Affichage d'un tableau HTML à partir d'un tableau associatif en PHP
 
 * [TD11](TD11/README.md): 
-    * ...
+    * Gestion des fichiers:
+        * `fopen()` : Ouvre un fichier et retourne un pointeur de fichier.
+        * `fwrite()` : Écrit une chaîne dans un fichier ouvert.
+        * `fclose()` : Ferme un fichier ouvert et libère les ressources associées.
+        * `file_exists()` : Vérifie si un fichier ou un répertoire existe.
+    * Gestion des fichiers CSV:
+        * `fputcsv()` : Écrit une ligne formatée en CSV dans un fichier.
+        * `fgetcsv()` : Lit une ligne d'un fichier CSV et la convertit en tableau.
+    * Gestion des fichiers JSON:
+        * `json_encode()` : Convertit une valeur PHP en chaîne JSON.
+        * `json_decode()` : Convertit une chaîne JSON en variable PHP (option associatif si spécifié).
+    * Gestion des tableaux associatifs:
+        * `array_combine($`keys, $row) : Crée un tableau associatif en combinant les clés et les valeurs.
 
 * [TD12](TD12/README.md): 
-    * ...
+    * Validation d'un email et d'un numéro de téléphone en utilisant une expression régulière
 
-* [TD13](TD14/README.md): 
-    * ...
+* [TD13](TD13/README.md): 
+    * Sauvegarder les données soumises dans un fichier JSON
+    * http_response_code() : Définit ou renvoie le code de réponse HTTP, permettant d'indiquer le statut de la requête.
+    * `in_array()` : Vérifie si une valeur spécifique se trouve dans un tableau.
+    * `str_len()` : Calcule la longueur d'une chaîne de caractères.
+    * `str_replace()` : Recherche et remplace toutes les occurrences d'une sous-chaîne dans une chaîne.
 
 * [TD14](TD14/README.md): 
-    * ...
+    * Sauvegarder les données soumises dans un fichier JSON
+    * Sauvegarder un fichier téléchargé avec un nom spécifique
+    * `pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION)`: Extrait l'extension du nom du fichier téléchargé.
+    * `is_dir()`: Vérifie si un dossier spécifié existe sur le serveur.
+    * `mkdir()`: Crée un nouveau dossier sur le serveur.
+    * `move_uploaded_file()`: Déplace le fichier téléchargé vers un emplacement cible.
 
 * [TD15](TD15/README.md): 
     * ...
