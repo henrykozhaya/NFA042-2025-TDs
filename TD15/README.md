@@ -1,15 +1,19 @@
 # Gestion des Étudiants
 ## Préparations MySQL 
-* Créer une base de données MySQL nommée `NFA042-2025-TDS"
-* Créer un utilisateur MySQL nommé "NFA042" avec un mot de passe "NFA042@PASS"
-* Créer la table étudiant suivante:
+..
 ```SQL
-CREATE TABLE student (
-    id varchar(255),
-    nom varchar(255) not null,
-    email varchar(255) not null,
-    date_de_naissance date,
-    primary key (id)
+CREATE TABLE candidate (
+    id varchar(255) PRIMARY KEY,
+    name varchar(255) NOT NULL,
+    email varchar(255) NOT NULL,
+    password varchar(255) NOT NULL,
+    birthdate date NOT NULL,
+    number_of_kids int NOT NULL,
+    gender enum('m', 'f') NOT NULL,
+    nationality enum('fr', 'us', 'lb') NOT NULL,
+    message text NOT NULL,
+    position enum('manager', 'supervisor', 'employee') NOT NULL,
+    cv varchar(255) NOT NULL
 );
 ```
 * Insérer des enregistrements démo suivants :

@@ -15,11 +15,17 @@ define('MYSQL_DBNAME', 'nfa008');
  * @return mysqli La connexion MySQLi établie.
  */
 function getMySQLiConnection(){
-    $conn = new mysqli(MYSQL_SERVERNAME, MYSQL_USERNAME, MYSQL_PASSWORD, MYSQL_DBNAME);
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
+    mysqli_report(MYSQLI_REPORT_OFF);
+    try{
+        $conn = @new mysqli(MYSQL_SERVERNAME, MYSQL_USERNAME, MYSQL_PASSWORD, MYSQL_DBNAME);
+        if ($conn->connect_error) {
+            throw new Exception("Connection failed: " . $conn->connect_error);
+        }
+        return $conn;
+    } catch (Exception $e) {
+        echo "Error: " . $e->getMessage();
+        return null;
     }
-    return $conn;
 }
 
 /**

@@ -1,22 +1,46 @@
-## Mise à jour des étudiants
-Ajoutez au TD 11 la possibilité de mettre à jour les données des étudiants. 
-Pour ce faire, ajoutez une colonne dans le tableau de la page index.php appelée "Modifier" avec l'icône "/img/edit.png". 
-Lorsque l'on clique sur cette icône, une page "update_etudiant.php" doit s'ouvrir. 
+# Gestion des Étudiants
+## Préparations MySQL 
+* Créer une base de données MySQL nommée `NFA042-2025-TDS"
+* Créer un utilisateur MySQL nommé "NFA042" avec un mot de passe "NFA042@PASS"
+* Créer la table étudiant suivante:
+```SQL
+CREATE TABLE student (
+    id int AUTO_INCREMENT,
+    nom varchar(255) not null,
+    email varchar(255) not null,
+    date_de_naissance date,
+    primary key (id)
+);
+```
+* Insérer des enregistrements démo suivants :
+```SQL
+INSERT INTO student (nom, email, date_de_naissance) 
+VALUES 
+('Sam', 'sam@gmail.com', '2000-02-14'), 
+('Joya', 'joya@gmail.com', '2000-02-10');
 
-Il faut envoyer l'ID de l'étudiant en paramètre GET, par exemple : update_etudiant.php?id=1
-
-* Si la requête est GET, la page update_etudiant.php doit afficher le même formulaire mais avec les données actuelles de l'étudiant en question.
-* Si la requête est POST, cela signifie que les données ont été modifiées et que le formulaire a été soumis. Dans ce cas, nous devons modifier les données dans la base de données puis rediriger l'utilisateur vers la page index.php.
-
-## Suppression d'un étudiant
-Ajoutez au TD 12 la possibilité de supprimer un étudiant.
-Pour ce faire, ajoutez une colonne dans le tableau de la page "index.php" appelée "Supprimer" avec l'icône "/img/delete.png". 
-Lorsque l'on clique sur cette icône, le script doit se diriger vers une nouvelle page "supprimer.php?id=1" avec la méthode GET.
-
-Cette page doit afficher un message de confirmation : "Êtes-vous sûr(e) de vouloir effacer l'étudiant {NOM} ?" avec deux boutons : oui et non.
-* Si l'on clique sur oui, les données doivent être supprimées de la base de données. 
-* Si non, le script doit rediriger l'utilisateur vers index.php.
-
-Avant d'afficher le message de confirmation, le script doit s'assurer que l'étudiant existe. Sinon, il doit rediriger vers index.php.
-
-Il faut toujours distinguer GET et POST. Si la requête est GET, on doit afficher le message, et si elle est POST, on doit supprimer l'étudiant et rediriger l'utilisateur vers index.php.
+```
+## PHP
+* Créer un fichier index.php qui affiche le formulaire HTML suivant :
+```HTML
+<h3>Ajouter de nouveaux enregistrements</h3>
+<form action="create_etudiant.php" method="POST">
+    <div style="margin-bottom:10px;">
+        <div>Nom</div>
+        <div><input type="text" name="nom" id=""></div>
+    </div>
+    <div style="margin-bottom:10px;">
+        <div>Email</div>
+        <div><input type="text" name="email" id=""></div>
+    </div>
+    <div style="margin-bottom:10px;">
+        <div>Date de Naissance</div>
+        <div><input type="date" name="date_de_naissance" id=""></div>
+    </div>
+    <div>
+        <div><input type="submit" name="" value="Ajouter un nouvel étudiant" id=""></div>
+    </div>
+</form>
+```
+* Au dessous du formulaire, créer un tableau qui affiche les informations des étudiants
+* Créer le fichier create_etudiant.php qui enregistre les informations soumises après leur validation dans la base de données. Une fois ajoutées, la page doit être redirigée vers index.php pour afficher le tableau à jour.

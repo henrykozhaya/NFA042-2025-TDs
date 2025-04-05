@@ -46,7 +46,7 @@
         <br><br>
 
         <label for="position">Poste</label>
-        <select name="position[]" id="position">
+        <select name="position" id="position">
             <option value="manager">Manager</option>
             <option value="supervisor">Superviseur</option>
             <option value="employee">Employé</option>

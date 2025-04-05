@@ -1,0 +1,22 @@
+{
+    "name": "Cnam Liban",
+    "email": "cnam@cnam.fr",
+    "birthdate": "2000-01-01",
+    "number_of_kids": 0,
+    "gender": "m",
+    "nationality": [
+        "lb",
+        "fr"
+    ],
+    "message": "Bonjour le cnam liban!! Hello",
+    "position": [
+        "manager",
+        "employee"
+    ],
+    "skills": [
+        "word",
+        "excel",
+        "programming"
+    ],
+    "submission_date": "2025-04-05 09:12:17"
+}

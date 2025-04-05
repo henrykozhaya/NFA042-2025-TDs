@@ -33,7 +33,7 @@ if(
 )
 {
     extract($_POST);
-
+    $name = trim($name);
     // Validations
     if (strlen($name) < 2) {
         http_response_code(400);
@@ -65,9 +65,15 @@ if(
         die("Au moins une nationalité doit être sélectionnée.");
     }
 
+    $message = trim($message);
     if (strlen($message) < 10) {
         http_response_code(400);
         die("Le message doit contenir au moins 10 caractères.");
+    }
+    
+    if (!is_numeric($number_of_kids) || $number_of_kids < 0) {
+        http_response_code(400);
+        die("Le nombre d'enfants doit être un nombre positif.");
     }
 
     if (count($position) == 0) {
@@ -97,7 +103,7 @@ if(
     // Construction du nom de fichier
     $filename = date('Y-m-d');
     $filename .= '-';
-    $filename .= str_replace(' ', '_', strtolower($name));
+    $filename .= str_replace(' ', '-', strtolower($name));
     $filename .= '-';
     $filename .= implode('-', $position); // le type de $position est array
     $filename .= '.json';
