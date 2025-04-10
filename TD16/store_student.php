@@ -3,41 +3,41 @@ require_once '../functions.php';
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     if
     (
-        isset($_POST['nom']) 
+        isset($_POST['name']) 
         && isset($_POST['email']) 
-        && isset($_POST['date_de_naissance'])
-        && !empty($_POST['nom'])
+        && isset($_POST['birthdate'])
+        && !empty($_POST['name'])
         && !empty($_POST['email'])
-        && !empty($_POST['date_de_naissance'])
+        && !empty($_POST['birthdate'])
     )
     {
         extract($_POST);
-        $nom = htmlspecialchars($nom);
+        $name = htmlspecialchars($name);
         $email = filter_var($email, FILTER_SANITIZE_EMAIL);
         if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             http_response_code(400);
             die("Invalid email format");
         }
-        if(strtotime($date_de_naissance) === false) {
+        if(strtotime($birthdate) === false) {
             http_response_code(400);
             die("Invalid date format");
         }
 
-        if(strtotime($date_de_naissance) > time()) {
+        if(strtotime($birthdate) > time()) {
             http_response_code(400);
             die("Date of birth cannot be in the future");
         }
 
         $conn = getPDOConnection();
-        $query = "INSERT INTO student (nom, email, date_de_naissance) VALUES (:nom, :email, :date_de_naissance)";
+        $query = "INSERT INTO `student` (`name`, `email`, `birthdate`) VALUES (:name, :email, :birthdate)";
         $stmt = $conn->prepare($query);
-        $stmt->bindParam(':nom', $nom, PDO::PARAM_STR);
+        $stmt->bindParam(':name', $name, PDO::PARAM_STR);
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
-        $stmt->bindParam(':date_de_naissance', $date_de_naissance, PDO::PARAM_STR);
+        $stmt->bindParam(':birthdate', $birthdate, PDO::PARAM_STR);
         if($stmt->execute()){
             $stmt = null;
             $conn = null;
-            header("Location: index.php");
+            header("location: index.php");
             exit();
         } else {
             http_response_code(500);

@@ -1,17 +1,17 @@
 ## Mise à jour des étudiants
 Ajoutez au TD 16 la possibilité de mettre à jour les données des étudiants. 
-Pour ce faire, ajoutez une colonne dans le tableau de la page index.php appelée "Modifier" avec l'icône "/img/edit.png". 
-Lorsque l'on clique sur cette icône, une page "update_etudiant.php" doit s'ouvrir. 
+Pour ce faire, ajoutez une colonne dans le tableau de la page `index.php` appelée "Edit" avec l'icône convenable. 
+Lorsque l'on clique sur cette icône, une page `update_student.php` doit s'ouvrir. 
 
-Il faut envoyer l'ID de l'étudiant en paramètre GET, par exemple : update_etudiant.php?id=1
+Il faut envoyer l'ID de l'étudiant en paramètre GET, par exemple : `update_student.php?id=1`
 
-* Si la requête est GET, la page update_etudiant.php doit afficher le même formulaire mais avec les données actuelles de l'étudiant en question.
+* Si la requête est GET, la page `update_student.php` doit afficher le même formulaire mais avec les données actuelles de l'étudiant en question.
 * Si la requête est POST, cela signifie que les données ont été modifiées et que le formulaire a été soumis. Dans ce cas, nous devons modifier les données dans la base de données puis rediriger l'utilisateur vers la page index.php.
 
 ## Suppression d'un étudiant
 Ajoutez au TD 12 la possibilité de supprimer un étudiant.
-Pour ce faire, ajoutez une colonne dans le tableau de la page "index.php" appelée "Supprimer" avec l'icône "/img/delete.png". 
-Lorsque l'on clique sur cette icône, le script doit se diriger vers une nouvelle page "supprimer.php?id=1" avec la méthode GET.
+Pour ce faire, ajoutez une colonne dans le tableau de la page `index.php` appelée "Delete" avec l'icône convenable. 
+Lorsque l'on clique sur cette icône, le script doit se diriger vers une nouvelle page `delete_student.php?id=1` avec la méthode GET.
 
 Cette page doit afficher un message de confirmation : "Êtes-vous sûr(e) de vouloir effacer l'étudiant {NOM} ?" avec deux boutons : oui et non.
 * Si l'on clique sur oui, les données doivent être supprimées de la base de données. 
