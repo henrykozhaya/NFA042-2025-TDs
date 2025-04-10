@@ -16,6 +16,7 @@ if($_SERVER["REQUEST_METHOD"] == 'GET'){
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
         $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        // Les informations de l'étudiant concerné se trouvent dans $data[0] car nous avons utilisé la méthode fetchAll
     } catch (PDOException $e) {
         die("Erreur PDO: " . $e->getMessage());
     } finally{
@@ -26,7 +27,7 @@ if($_SERVER["REQUEST_METHOD"] == 'GET'){
     if(count($data) == 0){
         die("No results found!");
     }
-
+    
     ?>
     <!-- HTML PART -->
     <!DOCTYPE html>

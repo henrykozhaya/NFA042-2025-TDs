@@ -36,7 +36,7 @@
                     <td><?=$candidate['name']?></td>
                     <td><?=$candidate['email']?></td>
                     <td><?=$candidate['birthdate']?></td>
-                    <td><?= $candidate['gender'] == 'm' ? 'Male' : 'Female'?></td>
+                    <td><?=$candidate['gender'] == 'm' ? 'Male' : 'Female'?></td>
                     <td><?=$candidate['nationality']?></td>
                     <td><?=$candidate['position']?></td>
                     <td>

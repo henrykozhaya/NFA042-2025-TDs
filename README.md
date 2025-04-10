@@ -86,7 +86,24 @@ Ce répertoire Git contiendra les traveaux dirigés (TD) sur lesquels nous allon
     * `move_uploaded_file()`: Déplace le fichier téléchargé vers un emplacement cible.
 
 * [TD15](TD15/README.md): 
-    * ...
+    * Application à un poste de travail (Formulaire + Gestion de fichiers)
+    * Sauvegarde d'un fichier dans un répertoire spécifique avec un nom de fichier aléatoire.
+    * `password_hash()`: Cette fonction génère un hachage sécurisé à partir d'un mot de passe, assurant la protection des données sensibles.
+    * `uniqid()`: Elle produit un identifiant unique basé sur l'heure actuelle, utile pour nommer des fichiers de manière unique.
+    * `http_response_code()`: Permet de définir ou de récupérer le code de réponse HTTP, indiquant le statut de la requête.
 
 * [TD16](TD16/README.md): 
-    * ...
+    * Créer un étudiant dans la base de données : Insère un nouvel étudiant dans la base en créant un objet représentant un étudiant.
+    * Afficher la liste des étudiants : Récupère et affiche dans un tableau l'ensemble des étudiants stockés dans la base.
+    * `htmlspecialchars()` : Convertit les caractères spéciaux en entités HTML pour sécuriser l'affichage.
+    * `filter_var($value, FILTER_SANITIZE_EMAIL)` : Nettoie une adresse email en supprimant les caractères indésirables.
+    * `filter_var($value, FILTER_VALIDATE_EMAIL)` : Valide qu'une adresse email respecte le format standard.
+
+* [TD17](TD17/README.md): 
+    * En complément du TD16, TD17 introduit des opérations de mise à jour et de suppression dans la base de données :
+        * Mise à jour d’un objet : permet de modifier les informations d’un étudiant existant dans la base.
+        * Suppression d’un objet : permet de retirer un étudiant de la base de données.
+
+    * Fonctions PDO :
+        * `$stmt->fetch(PDO::FETCH_ASSOC)` : Récupère la prochaine ligne du résultat sous forme d’un tableau associatif.
+        * `$stmt->fetchAll(PDO::FETCH_ASSOC)` : Récupère toutes les lignes du résultat sous forme de tableaux associatifs.
