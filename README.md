@@ -107,3 +107,11 @@ Ce répertoire Git contiendra les traveaux dirigés (TD) sur lesquels nous allon
     * Fonctions PDO :
         * `$stmt->fetch(PDO::FETCH_ASSOC)` : Récupère la prochaine ligne du résultat sous forme d’un tableau associatif.
         * `$stmt->fetchAll(PDO::FETCH_ASSOC)` : Récupère toutes les lignes du résultat sous forme de tableaux associatifs.
+
+* [TD18](TD18/README.md): Un système de login/logout basique ave PHP
+    * `password_verify()`: Vérifie qu'un mot de passe en clair correspond à un hachage sécurisé. Cette fonction est essentielle pour comparer le mot de passe saisi par l'utilisateur avec celui stocké dans la base de données.
+    * `password_hash()`: génère une version hachée d'un mot de passe en utilisant un algorithme cryptographique sécurisé (comme BCRYPT ou ARGON2).
+    * `$_SERVER["PHP_SELF"]`: Contient le chemin d'accès au script actuellement exécuté. On l'utilise souvent pour faire référence au même script dans un formulaire, favorisant des soumissions sécurisées et dynamiques.
+    * `session_start()`: Initialise une nouvelle session ou reprend une session existante. C'est impératif pour accéder aux variables de session tout au long de la navigation de l'utilisateur.
+    * `session_destroy()`: Termine la session en cours et supprime toutes les données associées. Elle sert souvent à déconnecter un utilisateur, assurant ainsi que ses informations de session ne persistent pas.
+    * `$_SESSION[]`: Tableau associatif superglobal permettant de stocker et de récupérer des informations durant une session. Il sert à conserver des données utilisateur entre différentes pages du site.

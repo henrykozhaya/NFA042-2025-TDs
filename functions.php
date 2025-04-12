@@ -4,7 +4,6 @@ define('MYSQL_USERNAME', 'nfa008');
 define('MYSQL_PASSWORD', 'JxJOA!L!_rVrL9Lf');
 define('MYSQL_DBNAME', 'nfa008');
 
-
 /**
  * Retourne une connexion MySQLi à la base de données.
  *
@@ -115,4 +114,10 @@ function getAge($birthdate)
     $birthdate = new DateTime($birthdate);
     $age = $today->diff($birthdate);
     return (int)$age->format('%y');
+}
+
+function show($arr){
+    echo "<pre>";
+    print_r($arr);
+    echo "</pre>";
 }
