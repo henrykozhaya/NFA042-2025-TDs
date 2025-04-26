@@ -1,4 +1,5 @@
 <?php require_once 'security.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,8 +16,23 @@
         <p style="font-size: 16px; color: #555;"><strong>Email:</strong> <?= $_SESSION["user"]["email"] ?></p>
         <p style="font-size: 16px; color: #555;"><strong>Phone:</strong> <?= $_SESSION["user"]["phone"] ?></p>
         <div style="text-align: center; margin-top: 20px;">
+            <a href="change-password.php" style="text-decoration: none; color: #fff; background-color: #007bff; padding: 10px 20px; border-radius: 5px;">Change Password</a>
             <a href="logout.php" style="text-decoration: none; color: #fff; background-color: #007bff; padding: 10px 20px; border-radius: 5px;">Logout</a>
         </div>
+        <hr>
+        <div>
+            <?php
+            if(isset($_SESSION["error"])){
+                echo "<div style='color:darkred'>" . $_SESSION["error"] . "</div>";
+                unset($_SESSION["error"]);
+            }
+            if(isset($_SESSION["success"])){
+                echo "<div style='color:darkgreen'>" . $_SESSION["success"] . "</div>";
+                unset($_SESSION["success"]);
+            }
+            ?>
+        </div>
     </div>
+
 </body>
 </html>

@@ -115,3 +115,19 @@ Ce répertoire Git contiendra les traveaux dirigés (TD) sur lesquels nous allon
     * `session_start()`: Initialise une nouvelle session ou reprend une session existante. C'est impératif pour accéder aux variables de session tout au long de la navigation de l'utilisateur.
     * `session_destroy()`: Termine la session en cours et supprime toutes les données associées. Elle sert souvent à déconnecter un utilisateur, assurant ainsi que ses informations de session ne persistent pas.
     * `$_SESSION[]`: Tableau associatif superglobal permettant de stocker et de récupérer des informations durant une session. Il sert à conserver des données utilisateur entre différentes pages du site.
+
+* [TD19](TD19/README.md): Login + Remember Me
+    * setcookie(): Crée un cookie côté client en définissant un nom, une valeur et une date d'expiration. Utile pour mémoriser des informations entre les visites.
+    * $_COOKIE[]: Tableau superglobal qui contient les cookies envoyés par le navigateur. Il permet de récupérer les valeurs stockées pour les utiliser dans l'application.
+    * Delete a cookie: Supprime un cookie en utilisant setcookie() avec une date d'expiration passée, ce qui incite le navigateur à le retirer.
+    * Auto-Login: Mécanisme qui vérifie l'existence d'un cookie d'authentification pour reconnecter automatiquement un utilisateur sans saisie répétée de ses identifiants.
+
+* [TD20](TD20/README.md): Classe Person
+
+    * La classe Person représente une personne et gère ses informations essentielles via des propriétés privées.
+    * Le constructeur initialise les données de base, tandis que les méthodes getters et setters permettent d'accéder et de modifier ces attributs en respectant le principe d'encapsulation.
+    * Private properties : Contient les informations internes de la classe (par exemple, nom, prénom, âge, etc.).
+    * __construct() : Initialise une nouvelle instance de la classe Person avec les paramètres essentiels.
+    * Getters : Fournissent un accès en lecture aux propriétés privées, permettant d'obtenir des informations telles que le nom, l'âge, etc.
+    Setters : Permettent la modification sécurisée des propriétés privées.
+    * getAge() : Retourne l'âge de la personne en renvoyant la valeur stockée ou en la calculant si nécessaire.

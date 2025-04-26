@@ -13,6 +13,7 @@ Dans cet exercice, vous allez construire un système de connexion basique en PHP
 - Définir les pages publiques :
     - login.php
     - index.php.
+- Ajouter une page `change-password.php` pour permettre à l'utilisateur de changer son mot de passe.
 
 ## Étapes à suivre
 

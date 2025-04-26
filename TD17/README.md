@@ -9,7 +9,7 @@ Il faut envoyer l'ID de l'étudiant en paramètre GET, par exemple : `update_stu
 * Si la requête est POST, cela signifie que les données ont été modifiées et que le formulaire a été soumis. Dans ce cas, nous devons modifier les données dans la base de données puis rediriger l'utilisateur vers la page index.php.
 
 ## Suppression d'un étudiant
-Ajoutez au TD 12 la possibilité de supprimer un étudiant.
+Ajoutez au TD 16 la possibilité de supprimer un étudiant.
 Pour ce faire, ajoutez une colonne dans le tableau de la page `index.php` appelée "Delete" avec l'icône convenable. 
 Lorsque l'on clique sur cette icône, le script doit se diriger vers une nouvelle page `delete_student.php?id=1` avec la méthode GET.
 
