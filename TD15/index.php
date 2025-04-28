@@ -13,7 +13,7 @@
     </div>
 
     <h3>Connexion</h3>
-    <form action="save_form.php" method="post" enctype='multipart/form-data' >
+    <form action="save_candidate.php" method="post" enctype='multipart/form-data' >
         <label for="name">Nom</label>
         <input type="text" name="name" id="name">
         <br><br>
